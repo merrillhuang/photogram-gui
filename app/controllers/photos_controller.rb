@@ -25,7 +25,7 @@ class PhotosController < ApplicationController
   def details
     photo_id = params.fetch("id")
 
-    photo = Photo.where({id: photo_id}).at(0)
+    @photo = Photo.where({id: photo_id}).at(0)
 
     render("/photo_templates/details")
   end
