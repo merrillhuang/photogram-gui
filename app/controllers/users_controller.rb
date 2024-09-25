@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def details
     username = params.fetch("username")
 
-    @user = User.where({username: username})
+    @user = User.where({username: username}).at(0)
 
     render("/user_templates/details")
   end
