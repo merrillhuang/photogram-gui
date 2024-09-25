@@ -9,4 +9,16 @@
   <dd><%= @photo.poster.username %></dd>
   <dt>Posted</dt>
   <dd><%= @photo.created_at %></dd>
+  <dt>Edit photo</dt>
+  <dd>
+    <form action="/update_photo/<%= @photo.id %>" method="post">
+      <label for="image_box">Image</label>
+      <input type="text" value="<%= @photo.image %>" id="image_box" name="query_image_url"></input>
+
+      <label for="caption_box">Caption</label>
+      <textarea id="caption_box" name="query_caption"><%= @photo.caption %></textarea>
+
+      <button>Update photo</button>
+    </form>
+  </dd>
 </dl>
