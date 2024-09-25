@@ -15,4 +15,8 @@ class UsersController < ApplicationController
       redirect_to("/users", {notice: "User failed to create successfully"})
     end
   end
+
+  def details
+    render("/user_templates/details")
+  end
 end
