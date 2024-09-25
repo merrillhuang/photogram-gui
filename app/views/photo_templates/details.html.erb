@@ -43,3 +43,17 @@
     <% } %>
   </tbody>
 </table>
+
+<h3>Add a new comment</h3>
+<form action="/insert_comment" method="post">
+  <label for="photo_id_box">Photo ID</label>
+  <input type="text" id="photo_id_box" name="query_photo_id" value="<%= @photo.id %>"></input>
+
+  <label for="author_id_box">Author ID</label>
+  <input type="text" id="author_id_box" name="query_author_id" placeholder="Enter your author ID">
+
+  <label for="comment_box">Comment</label>
+  <textarea id="comment_box" name="query_comment_body" placeholder="Enter a comment..."></textarea>
+  
+  <button>Add comment</button>
+</form>
