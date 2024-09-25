@@ -3,4 +3,12 @@
 <d1>
   <dt>ID</dt>
   <dd><%= @user.id %></dd>
+  <dt>Edit user</dt>
+  <dd>
+    <form action="/update_user" method="post">
+      <label for="username_box">Username</label>
+      <input type="text" id="username_box" name="query_username" value="<%= @user.username %>"></input>
+      <button>Update user</button>
+    </form>
+  </dd>
 </d1>
