@@ -17,6 +17,10 @@ class UsersController < ApplicationController
   end
 
   def details
+    username = params.fetch("query_username")
+
+    @user = User.where({username: username})
+
     render("/user_templates/details")
   end
 end
