@@ -21,4 +21,12 @@ class PhotosController < ApplicationController
       redirect_to("/photos", {notice: "Photo failed to create successfully"})
     end
   end
+
+  def details
+    photo_id = params.fetch("id")
+
+    photo = Photo.where({id: photo_id}).at(0)
+
+    render("/photo_templates/details")
+  end
 end
