@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get("/users", {controller: "users", action: "index"})
   post("/insert_user", {controller: "users", action: "create"})
   get("/users/:username", {controller: "users", action: "details"})
-  post("/update_user", {controller: "users", action:"update"})
+  post("/update_user/:username", {controller: "users", action:"update"})
 end
