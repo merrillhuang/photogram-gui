@@ -11,3 +11,23 @@
 </form>
 
 <hr>
+
+<table border="1">
+  <tbody>
+    <tr>
+      <th>Image</th>
+      <th>Caption</th>
+      <th>Owner</th>
+      <th>Posted</th>
+      <td></td>
+    </tr>
+    <% @photos.each { |photo| %>
+      <tr>
+        <td><img src="<%= photo.image %>"></td>
+        <td><%= photo.caption %></td>
+        <td><%= photo.poster.username %></td>
+        <td><%= photo.created_at %></td>
+        <td><a href="/photos/<%= photo.id %>">Show details</td>
+    <% } %>
+  </tbody>
+</table>
