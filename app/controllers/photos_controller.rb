@@ -45,4 +45,14 @@ class PhotosController < ApplicationController
       redirect_to("/photos/#{photo_id}", notice: "Photo failed to update successfully")
     end
   end
+
+  def destroy
+    photo_id = params.fetch("id")
+
+    delete_photo = Photo.where({id: photo_id}).at(0)
+
+    delete_photo.destroy
+
+    redirect_to("/photos", {notice: "Photo deleted successfully"})
+  end
 end
