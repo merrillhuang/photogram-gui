@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get("/photos", {controller: "photos", action: "index"})
   post("insert_photo", {controller: "photos", action:"create"})
   get("/photos/:id", {controller: "photos", action: "details"})
-  post("update_photo/:id", {conttroller: "photos", action: "update"})
+  post("update_photo/:id", {controller: "photos", action: "update"})
 end

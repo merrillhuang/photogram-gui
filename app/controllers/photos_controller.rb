@@ -29,4 +29,20 @@ class PhotosController < ApplicationController
 
     render("/photo_templates/details")
   end
+
+  def update
+    photo_id = params.fetch("id")
+
+    update_photo = Photo.where({id: photo_id}).at(0)
+
+    update_photo.image = params.fetch("query_image_url")
+    update_photo.caption = params.fetch("query_caption")
+    
+    if update_photo.valid?
+      update_photo.save
+      redirect_to("/photos/#{photo_id}", notice: "Photo updated successfully")
+    else
+      redirect_to("/photos/#{photo_id}", notice: "Photo failed to update successfully")
+    end
+  end
 end
