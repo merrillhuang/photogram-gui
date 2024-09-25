@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   post("/update_user/:username", {controller: "users", action:"update"})
 
   get("/photos", {controller: "photos", action: "index"})
+  post("insert_photo", {controller: "photos", action:"create"})
 end
