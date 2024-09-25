@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  def show
+  def index
     render("/user_templates/index")
   end
 end
